@@ -26,7 +26,7 @@ Traditional question answering systems in education often struggle with providin
 
 ## Project Structure
 
-.
+```.
 ├── ed_rag (backend)
 │ ├── data
 │ ├── ed_rag
@@ -40,7 +40,7 @@ Traditional question answering systems in education often struggle with providin
 │ ├── index.js
 └── README.md
 └── .gitignore
-
+```
 
 
 ## Installation
