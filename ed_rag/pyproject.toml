@@ -34,6 +34,7 @@ mongoengine = "^0.28.2"
 flask-socketio = "^5.3.6"
 redis = "^5.0.8"
 celery = "^5.4.0"
+ragas = "^0.1.13"
 
 
 [build-system]

@@ -12,6 +12,16 @@ import socketIOClient from 'socket.io-client';
 import "./SidebarComponent.css";
 import api from "../../app/api";
 
+const options = {
+    weekday: 'short', // "Sun"
+    year: 'numeric',  // "2024"
+    month: 'short',   // "Aug"
+    day: '2-digit',   // "04"
+    hour: '2-digit',  // "22"
+    minute: '2-digit',// "06"
+    hour12: true     // 24-hour format
+};
+
 
 const SidebarComponent = () => {
     const dispatch = useDispatch();
@@ -150,7 +160,7 @@ const SidebarComponent = () => {
                                     id={chat.chat_id}
                                     className={"font-secondary-theme sidebar-item full-width " +(chat.chat_id === activeChat? "sidebar-item-active" : "") }
                                     onClick={(e)=> {handleSelectChat(e.target.id)} }>
-                                        {chat.title ? chat.title : chat.chat_id}
+                                        {chat.title ? chat.title : new Date(chat.timestamp).toLocaleString('en-US', options).replace(',', '')}
                                 </Paper>
                             ))
                         

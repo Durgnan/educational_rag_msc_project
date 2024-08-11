@@ -17,14 +17,14 @@ from langchain.retrievers.document_compressors import FlashrankRerank
  
  
 class AdvancedRAG:
-    def __init__(self,model:str = "gpt-3.5"):
+    def __init__(self,model:str = "gpt-3.5", db:str = "ed_rag/faiss_db_900"):
         load_dotenv()
         self.model = model
         if(self.model not in ["gpt-3.5-turbo","gemma2","mistral","llama3.1","llama3","gpt-4","gpt-4o","llama2"]):
             raise ValueError('the model you have provided is not available or exists. please provide one of the below available models.["gpt-3.5","gemma2","mistral","llama3.1","llama3","gpt-4","gpt-4o"]')
         self.embeddings = self.create_embeddings()
         self.prompt = self._create_prompt()
-        self.db = "faiss_db_900"
+        self.db = db
         self.retriever = self._retriever()
         self.model_obj = self._define_model()
         self.qa_chain = self._create_qa_chain()

@@ -17,7 +17,8 @@ class Trainer:
         self.file_path_or_dir = Path(file_path_or_dir)
         self.documents = self._load_pdf_and_split()
         self.embeddings = Trainer.create_embeddings()
-        self.db = "faiss_db_900"
+        print(os.getcwd())
+        self.db = "ed_rag/faiss_db_900"
  
     def _load_pdf_and_split(self):
         """
