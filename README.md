@@ -28,19 +28,83 @@ Traditional question answering systems in education often struggle with providin
 
 ```
 .
-├── ed_rag (backend)
-│ ├── data
-│ ├── ed_rag
-│ │ ├── init.py
-│ ├── tests
-│ │ ├── init.py
-│ │ └── test_main.py
-│ ├── poetry.lock
-│ └── pyproject.toml
+├── README.md
+├── ed_rag
+│   ├── README.md
+│   ├── app.py
+│   ├── celery_worker.py
+│   ├── data
+│   │   └── pdf files
+│   ├── ed_rag
+│   │   ├── __init__.py
+│   │   ├── rag.py
+│   │   ├── test.csv
+│   │   ├── test.py
+│   │   └── trainer.py
+│   ├── poetry.lock
+│   ├── pyproject.toml
+│   ├── tests
+│   │   ├── __init__.py
+│   │   └── test.py
+│   └── web
+│       ├── __init__.py
+│       ├── apis
+│       │   ├── __init__.py
+│       │   ├── chats.py
+│       │   ├── db
+│       │   │   ├── __init__.py
+│       │   │   └── session.py
+│       │   ├── healthcheck.py
+│       │   ├── history.py
+│       │   ├── tasks.py
+│       │   └── upload.py
+│       ├── core.py
+│       └── models
+│           ├── Chat.py
+│           ├── __init__.py
 ├── ed_rag_fe
-│ ├── index.js
-└── README.md
-└── .gitignore
+│   ├── README.md
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   └── src
+│       ├── App.css
+│       ├── App.js
+│       ├── App.test.js
+│       ├── Components
+│       │   ├── ChatBoxComponent
+│       │   │   ├── ChatBoxComponent.css
+│       │   │   └── ChatBoxComponent.js
+│       │   ├── ChatInterfaceComponent
+│       │   │   ├── ChatInterfaceComponent.css
+│       │   │   └── ChatInterfaceComponent.js
+│       │   ├── Dock
+│       │   │   └── DockComponent.js
+│       │   ├── MainComponent
+│       │   │   ├── MainComponent.css
+│       │   │   └── MainComponent.js
+│       │   └── SidebarComponent
+│       │       ├── SidebarComponent.css
+│       │       └── SidebarComponent.js
+│       ├── app
+│       │   ├── api.js
+│       │   ├── features
+│       │   │   ├── chatSlice.js
+│       │   │   └── historySlice.js
+│       │   └── store.js
+│       ├── index.css
+│       ├── index.js
+│       ├── logo.svg
+│       ├── reportWebVitals.js
+│       ├── services
+│       │   └── MessageService.js
+│       └── setupTests.js
 ```
 
 
