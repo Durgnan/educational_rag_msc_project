@@ -3,6 +3,8 @@ __pycache__/
 *.pyc
 # C extensions
 *.so
+*.pkl
+*.faiss
 
 # Distribution / packaging
 bin/
