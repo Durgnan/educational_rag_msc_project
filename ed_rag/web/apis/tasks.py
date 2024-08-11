@@ -23,6 +23,7 @@ def task_complete(result, filenames):
 
 @celery.task
 def train_model(filenames):
+    logger.info(os.getcwd())
     logger.info("Training started")
     for filename in filenames:
         filepath = os.path.join('data', filename)
