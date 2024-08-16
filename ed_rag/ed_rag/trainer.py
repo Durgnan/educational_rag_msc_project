@@ -13,12 +13,12 @@ from langchain_community.vectorstores import FAISS
 @dataclass
 class Trainer:
  
-    def __init__(self,file_path_or_dir:str) -> None:
+    def __init__(self,file_path_or_dir:str, db:str = "ed_rag/faiss_db_900") -> None:
         self.file_path_or_dir = Path(file_path_or_dir)
         self.documents = self._load_pdf_and_split()
         self.embeddings = Trainer.create_embeddings()
         print(os.getcwd())
-        self.db = "ed_rag/faiss_db_900"
+        self.db = db
  
     def _load_pdf_and_split(self):
         """
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     
     print(f"Initialising the model...")
     start_time = time.time()
-    rag = Trainer(r"../data/dp-II-annotated.pdf")
+    rag = Trainer(r"../data/Sipser_Introduction_to_the_Theory_of_Computation_3E.pdf", db="faiss_db_900")
     print(f"Model initialised {time.time() - start_time}")
     
     print(f"Training the model...")
