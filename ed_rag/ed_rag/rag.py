@@ -13,7 +13,8 @@ from langchain_community.chat_models import ChatOpenAI
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.retrievers import ContextualCompressionRetriever
 from langchain.retrievers.document_compressors import FlashrankRerank
-# from langchain.retrievers import BM25Retriever, EnsembleRetriever
+from langchain.retrievers import EnsembleRetriever
+from langchain_community.retrievers import BM25Retriever
  
  
 class AdvancedRAG:
@@ -115,7 +116,7 @@ class AdvancedRAG:
  
 # Usage example
 if __name__ == "__main__":
-    rag = AdvancedRAG(model="llama3.1")
+    rag = AdvancedRAG(model="llama3.1", db = "faiss_db_900")
    
     # Answer a question from the PDF
     question = '''
