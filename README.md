@@ -221,3 +221,4 @@ This project is aimed to work more on implementing RAG related features like
 ## Contact
 
 For any inquiries, please contact the project maintainer at [durgnan45@gmail.com](mailto:durgnan45@gmail.com).
+
