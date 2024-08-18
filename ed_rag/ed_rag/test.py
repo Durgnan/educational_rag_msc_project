@@ -69,6 +69,7 @@ class Test:
         })
         
     def test(self):
+        models = ["llama3.1", "llama3", "gemma2", "mistral"]
         langchain_llm = Ollama(model="llama3")
         result = evaluate(
             dataset = self.dataset,
@@ -87,6 +88,26 @@ class Test:
         df.head()
         df.to_csv("test.csv")
         # return df
+    
+    def get_detailed_report(self):
+        models = ["llama3.1", "llama3", "gemma2", "mistral"]
+        for model in models:
+            main_df = []
+            
+            langchain_llm = Ollama(model=model)
+            result = evaluate(
+                dataset = self.dataset,
+                llm=langchain_llm,
+                embeddings=self.rag.embeddings,
+                metrics=[
+                    context_precision,
+                    faithfulness,
+                    answer_relevancy,
+                    context_recall,
+                ],
+                run_config=RunConfig(max_workers=64)
+            )
+            
 
 
 if __name__ == "__main__":
